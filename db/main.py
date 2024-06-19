@@ -4,6 +4,7 @@ from sqlmodel import SQLModel, create_engine
 from sqlmodel.ext.asyncio.session import AsyncSession
 
 
+# database_url can be a postgresql database
 engine = AsyncEngine(create_engine(url="database_url", echo=True))
 
 
