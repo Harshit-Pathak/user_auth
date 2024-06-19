@@ -3,7 +3,7 @@ import jwt
 from passlib.context import CryptContext
 
 PASSWORD_CONTEXT = CryptContext(schemes=["bcrypt"], deprecated="auto")
-SECRET_KEY = "2c3ce214db26582209a8bb76e9f86533"
+SECRET_KEY = "2c3ce214db26582209a8bb76e9f86533"   # generated using secrets library, secrets.token_hex(16)
 ALGORITHM = "SH256"
 
 
