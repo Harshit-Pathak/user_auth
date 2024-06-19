@@ -13,9 +13,7 @@ auth_router = APIRouter()
 user_service = UserService()
 
 
-@auth_router.post(
-    "/signup", response_model=UserModel, status_code=status.HTTP_201_CREATED
-)
+@auth_router.post("/signup", response_model=UserModel, status_code=status.HTTP_201_CREATED)
 async def create_user_Account(user_data: UserCreateModel, session: AsyncSession = Depends(get_session)):
     email = user_data.email
     user_exists = await user_service.user_exists(email, session)
