@@ -41,18 +41,10 @@ async def login_user(user_data: UserLoginModel, session: AsyncSession = Depends(
 
     if user is not None and check_password(password, user.password_hash):
         access_token = create_access_token({"user_id": str(user.uid)})
-        refresh_token = create_access_token(
-            {
-                "user_id": str(user.uid),
-                "refresh":True
-            },
-            expires=timedelta(days=2),
-        )
 
         return {
             "message": "Login Successful",
             "access_token": access_token,
-            "refresh_token": refresh_token,
             "user": user,
         }
 
