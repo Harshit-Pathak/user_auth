@@ -17,9 +17,8 @@ class User(SQLModel, table=True):
     email: str
     is_verified: bool = Field(default=False)
     password_hash: str = Field(exclude=True)
-    created_at:datetime = Field(sa_column=Column(pg.TIMESTAMP,default=datetime.now))
-    update_at: datetime = Field(sa_column=Column(pg.TIMESTAMP,default=datetime.now))
+    created_at: datetime = Field(sa_column=Column(pg.TIMESTAMP,default=datetime.now))
 
 
     def __repr__(self):
-        return f"User - {self.username}"
+        return f"User is -> {self.username}"
